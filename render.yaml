@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: openhands
+    runtime: image
+    image:
+      url: ghcr.io/openhands/agent-canvas:1.8.0
+    plan: starter
+    region: oregon
+    port: 8000
+    healthCheckPath: /api
+    disk:
+      name: openhands-data
+      mountPath: /home/openhands/.openhands
+      sizeGB: 5
+    envVars:
+      - key: VITE_BACKEND_HOST
+        value: 0.0.0.0:8000
+      - key: VITE_BACKEND_BASE_URL
+        value: http://0.0.0.0:8000

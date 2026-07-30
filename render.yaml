@@ -2,12 +2,11 @@ services:
   - type: web
     name: openhands
     runtime: image
-    image:
-      url: ghcr.io/openhands/agent-canvas:1.8.0
+    image: ghcr.io/openhands/agent-canvas:1.8.0
     plan: starter
     region: oregon
     port: 8000
-    healthCheckPath: /api
+    healthCheckPath: /
     disk:
       name: openhands-data
       mountPath: /home/openhands/.openhands

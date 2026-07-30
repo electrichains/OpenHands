@@ -4,7 +4,7 @@ services:
     runtime: image
     image:
       url: ghcr.io/openhands/agent-canvas:1.8.0
-    plan: starter
+    plan: standard
     region: oregon
     healthCheckPath: /
     disk:
